@@ -73,6 +73,35 @@
       color: #000 !important; /* 黑色 */
      }
 
+	      /* 外层按钮圆圈 */
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 1px solid #171717;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.4s;
+      color: #000; /* Swiper 默认箭头颜色 */
+    }
+
+    /* Hover 时变黑 + 箭头变白 */
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      transform: scale(1.2);
+      background-color: #000;
+      color: #fff;
+    }
+
+    /* 调整箭头大小（Swiper箭头来自 ::after） */
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 25px;
+    }
+
   </style>
 </head>
 
