@@ -102,6 +102,23 @@
       font-size: 25px;
     }
 
+	/* 强制覆盖 Swiper 在禁用状态下的视觉样式，保证颜色和不透明度一致 */
+    .swiper-button-disabled,
+    .swiper-button-disabled::after,
+    .swiper-button-disabled svg,
+    .swiper-button-disabled path {
+      opacity: 1 !important;        /* 不变暗 */
+      filter: none !important;      /* 清除任何滤镜 */
+      color: inherit !important;    /* 保持箭头颜色 */
+      fill: currentColor !important;/* 保持 SVG 填充继承颜色 */
+    }
+
+/* 如果希望禁用按钮仍不可点击，保留 pointer-events:none；
+   若想既视觉又可点击，可移除此规则 */
+    .swiper-button-disabled {
+      pointer-events: none !important;
+    }
+
   </style>
 </head>
 
